@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hug Lovers ❤️</title>
+    <title>For My Love ❤️</title>
 
     <style>
         * {
@@ -15,103 +15,117 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ffe0e6, #fff1eb, #ffd6e0);
             min-height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ffb7c5, #ffc3a0);
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            overflow: hidden;
         }
 
-        .container {
-            padding: 30px 20px;
-            max-width: 850px;
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 25px;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 10px 35px #9b254444;
+            z-index: 2;
         }
 
         h1 {
-            color: #e63962;
-            font-size: 45px;
-            margin-bottom: 15px;
+            color: #e91e63;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .big-heart {
+            font-size: 85px;
+            animation: beat 1s infinite;
+            margin: 15px 0;
         }
 
         p {
-            color: #70404c;
-            font-size: 20px;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .hug-image {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px #d66b7c44;
-        }
-
-        .heart {
-            font-size: 35px;
-            margin: 20px;
-            animation: heartbeat 1s infinite;
+            color: #79354d;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
         button {
-            background: #e63962;
+            background: #e91e63;
             color: white;
             border: none;
-            padding: 14px 28px;
+            padding: 14px 25px;
             border-radius: 30px;
             font-size: 17px;
             cursor: pointer;
-            margin-top: 20px;
         }
 
         button:hover {
-            background: #b91f49;
+            background: #c2185b;
         }
 
         #message {
-            margin-top: 20px;
-            color: #e63962;
+            margin-top: 25px;
+            font-size: 20px;
+            color: #e91e63;
             font-weight: bold;
         }
 
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: float 7s linear infinite;
+            opacity: 0.7;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 32px;
-            }
+        .floating-heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .floating-heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+        .floating-heart:nth-child(3) { left: 65%; animation-delay: 1s; }
+        .floating-heart:nth-child(4) { left: 85%; animation-delay: 3s; }
 
-            p {
-                font-size: 17px;
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>❤️ Hug Lovers ❤️</h1>
+
+    <div class="floating-heart">❤️</div>
+    <div class="floating-heart">💕</div>
+    <div class="floating-heart">💖</div>
+    <div class="floating-heart">💗</div>
+
+    <div class="card">
+        <h1>For My Love ❤️</h1>
+
+        <div class="big-heart">💖</div>
 
         <p>
-            Some hugs say what words cannot. 💕<br>
-            Every hug brings two hearts closer together.
+            You are my favorite person,<br>
+            my sweetest happiness,<br>
+            and my most beautiful feeling. 🥰
         </p>
 
-        <img
-            class="hug-image"
-            src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=80"
-            alt="A loving couple sharing a warm embrace"
-        >
+        <p>Every day, my heart chooses you. 💕</p>
 
-        <div class="heart">💖 🤗 💖</div>
-
-        <p>In your arms is my favorite place to be.</p>
-
-        <button onclick="showLove()">Send a Hug 🤗</button>
+        <button onclick="showLove()">Click for a Surprise 💌</button>
 
         <div id="message"></div>
     </div>
@@ -119,9 +133,10 @@
     <script>
         function showLove() {
             document.getElementById("message").innerHTML =
-                "🤗 Sending you the biggest hug and lots of love! ❤️";
+                "I LOVE YOU SO MUCH! ❤️😘<br>You make my world beautiful! 💖";
         }
     </script>
+
 </body>
 </html>
 
